@@ -16,8 +16,12 @@ sudo docker run --name mysql-latest  -p 3306:3306 -p 33060:33060  -e MYSQL_ROOT_
 
 ---para saber ip del coontainer
 
-udo  docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 01b34ac5aad
+sudo  docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 01b34ac5aad
 172.17.0.2
 
 ---para entrar en el
 sudo docker exec -it mysql-latest mysql -u root -pstrongpassword
+
+Entrar a la bgase de datos y correr el commmand para establecesr la coneccion
+
+ ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'strongpassword';
